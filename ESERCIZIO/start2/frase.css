@@ -8,11 +8,69 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
-#testoAlternato .parole i:nth-child(1) {
+body {
+    background-color: black;
+    color: aliceblue;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    max-width: 900px;
+    border: 1px solid black;
+    margin: auto;
+    font-size: 2em;
+    margin-block-start: 3em;
+    position: relative;
 }
 
-#testoAlternato .parole i:nth-child(2) {
+.wrapper .inner-span i:nth-child(1) {
+    position: absolute;
+    color: rgb(238, 6, 6);
+    right: 196px;
+    bottom: 165px;
+    animation-name: frasiInMovimento;
+    animation-delay: 5s;
+    animation-duration: 2s;
+    opacity: 0;
+    /* animation-iteration-count: infinite; */
+}
+.wrapper .inner-span i:nth-child(2) {
+    position: absolute;
+    color: rgb(208, 230, 11);
+    right: 210px;
+    bottom: 165px;
+    animation-name: frasiInMovimento;
+    animation-delay: 3s;
+    animation-duration: 2s;
+    opacity: 0;
+    /* animation-iteration-count: infinite; */
+}
+.wrapper .inner-span i:nth-child(3) {
+    position: absolute;
+    color: rgb(8, 216, 216);
+    right: 64px;
+    bottom: 165px;
+    animation-name: frasiInMovimento;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    opacity: 0;
+    /* animation-iteration-count: infinite; */
 }
 
-#testoAlternato .parole i:nth-child(3) {
+@keyframes frasiInMovimento {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        bottom: 134px;
+        opacity: 1;
+    }
+
+    90% {
+        bottom: 85px;
+        opacity: 0;
+    }
 }
