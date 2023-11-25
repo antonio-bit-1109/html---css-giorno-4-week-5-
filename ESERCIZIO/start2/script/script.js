@@ -1,3 +1,3 @@
 setTimeout(function () {
-    location.reload(true);
+    location.reload();
 }, 7000);
