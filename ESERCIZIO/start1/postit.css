@@ -5,6 +5,15 @@ body {
     font-family: "Indie Flower";
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .container {
     display: flex;
     gap: 50px;
@@ -35,7 +44,7 @@ p {
     box-shadow: 3px 3px 9px black;
     animation-name: appiccicati;
     animation-duration: 800ms;
-    animation-delay: 0;
+    animation-delay: none; /* animation delay è inserito nell 'id dei singoli post sono il nome #one #two #three ecc ecc  */
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-iteration-count: unset;
     animation-direction: normal;
@@ -65,7 +74,8 @@ p {
 }
 
 #one {
-    animation-delay: 200ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 0;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -78,7 +88,8 @@ p {
     );
 }
 #two {
-    animation-delay: 300ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 50ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -91,7 +102,8 @@ p {
     );
 }
 #three {
-    animation-delay: 400ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 100ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -104,7 +116,8 @@ p {
     );
 }
 #four {
-    animation-delay: 500ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 150ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -117,7 +130,8 @@ p {
     );
 }
 #five {
-    animation-delay: 750ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 200ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -130,7 +144,8 @@ p {
     );
 }
 #six {
-    animation-delay: 900ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 250ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -143,7 +158,8 @@ p {
     );
 }
 #seven {
-    animation-delay: 1050ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 300ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -156,7 +172,8 @@ p {
     );
 }
 #eight {
-    animation-delay: 1200ms;
+    animation-name: post-It-Ruotati-a10deg;
+    animation-delay: 350ms;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         180deg,
@@ -177,16 +194,32 @@ p {
     transform: rotate(-10deg);
 }
 
-@keyframes appiccicati {
+@keyframes post-It-Ruotati-a10deg {
+    /* basta che imposti come vuoi che si presenti in una situazione intermedia SENZA SPECIFICARE LA POSIZIONE FINALE tanto alla posizione FINALE ( cioè la situazione di partenza )  ci ritorna in automatico  */
     0% {
-        transform: scale(4);
-        filter: blur(4px);
+        translate: -800px 800px;
+        rotate: 900deg;
         opacity: 0;
+        scale: 5;
     }
-    100% {
-        transform: scale(1);
-        filter: blur(0);
+    90% {
         opacity: 1;
-        rotate: (10deg);
+        scale: 1;
     }
+}
+
+.container .wrapper {
+    transition: all 300ms;
+    opacity: 0;
+}
+
+/* .container .post-it p:hover,
+h3:hover {
+    transition: all 300ms;
+
+} */
+
+.container .wrapper:hover {
+    transition: all 300ms;
+    opacity: 1;
 }
